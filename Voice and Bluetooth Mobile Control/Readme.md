@@ -16,3 +16,5 @@ Fast Backward: Activates both motors at full speed and moves it backward.
 Slow Right: Activates left motor and makes a left turn. 
 Slow Left: Activates right motor and makes a right turn.  
 Stop: Deactivates both motors. 
+
+![Robot](https://github.com/AmrAli47/Repo/assets/167882152/98405e84-f7d8-47fc-affe-4fb7f0f477d4)
