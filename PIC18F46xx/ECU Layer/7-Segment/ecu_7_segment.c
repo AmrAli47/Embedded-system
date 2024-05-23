@@ -1,7 +1,7 @@
 /* 
  * File:   ecu_7_segment.c
  * Author: Amr Ali
- *
+ * 
  * Created on March 16, 2024, 5:55 PM
  */
 
