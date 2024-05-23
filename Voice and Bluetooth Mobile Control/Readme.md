@@ -9,8 +9,8 @@
 ### Once connected, give predefined commands through the mobile handset to the robot.
 
 ### Commands are:
-Forward: Activates both motors at slow speed and moves it forward.  
-Backward: Activates both motors at slow speed and moves it backward 
+Forward: Activates both motors at slow speed and moves it forward.
+Backward: Activates both motors at slow speed and moves it backward. 
 Fast Forward: Activates both motors at full speed and moves it fast forward. 
 Fast Backward: Activates both motors at full speed and moves it backward. 
 Slow Right: Activates left motor and makes a left turn. 
