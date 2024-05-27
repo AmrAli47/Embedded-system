@@ -1,10 +1,12 @@
-### components: PIC18F4620, LCD,Keypad.
+### components: PIC18F4620, LCD, Keypad, L298N.
 ### Project description :
-### ask user to enter the password using keypad 
+### ask the user to enter the password using keypad 
 ### then compare user input with real password.
+### if password is wront, user will try again
+### but if password is correct, motor will work.
 
 
 
-https://github.com/AmrAli47/Repo/assets/167882152/64c28e6a-82cf-4a29-9586-349ab8f6b7e8
+
 
 
