@@ -24,6 +24,10 @@ keypad_t Keypad = {
 .keypad_columns_pins[2].Port_Number = Port_D,.keypad_columns_pins[2].Pin_Number = Pin4,.keypad_columns_pins[2].direction = Input,.keypad_columns_pins[2].logic = Low,
 .keypad_columns_pins[3].Port_Number = Port_D,.keypad_columns_pins[3].Pin_Number = Pin5,.keypad_columns_pins[3].direction = Input,.keypad_columns_pins[3].logic = Low,
 };
+Motor_t Motor = {
+.Motor_Pin[0].Port_Number = Port_D,.Motor_Pin[0].Pin_Number = Pin6,.Motor_Pin[0].direction = Output,.Motor_Pin[0].logic = Low,
+.Motor_Pin[1].Port_Number = Port_D,.Motor_Pin[1].Pin_Number = Pin7,.Motor_Pin[1].direction = Output,.Motor_Pin[1].logic = Low,
+};
 int real_password[4] = {2,4,6,8};
 int input_password[4] = {0};
 int values[9] = {1,2,3,4,5,6,7,8,9};
@@ -36,9 +40,9 @@ int main() {
 ret = Keypad_initialize(&Keypad);
 ret |= LCD_4_Bit_initialization(&LCD);
 ret |= LCD_4_Bit_Send_String_Pos(&LCD,"Enter The Password",1,1);
+ret |= motor_initialize(&Motor);
 while(1)
 {
-/* Take The Password*/
 while(i < 4)
 {
 ret |= Get_Keypad_value(&Keypad,&value);  
@@ -60,9 +64,7 @@ continue;
 }
 u = 0;
 }
-
 ret |= Get_Keypad_value(&Keypad,&value);  
-/* check the password */
 if(value == '=')
 {
 for(j=0;j<4;j++)
@@ -83,7 +85,7 @@ ret |= LCD_4_Bit_Send_String_Pos(&LCD,"wrong password",1,6);
 ret |= LCD_4_Bit_Send_String_Pos(&LCD,"try again",2,6);
 not_equal = 0;
 i = 0;
-__delay_ms(250);
+__delay_ms(1000);
 ret |= LCD_4_Bit_Send_Command(&LCD,Display_Clear);
 ret |= LCD_4_Bit_Send_String_Pos(&LCD,"Enter The Password",1,1);
 k = 7;
@@ -94,6 +96,7 @@ if(n == 1)
 {
 ret |= LCD_4_Bit_Send_Command(&LCD,Display_Clear);   
 ret |= LCD_4_Bit_Send_String_Pos(&LCD,"correct password",1,3);
+ret |= motor_move_right(&Motor);
 n = 0;
 }
 }
