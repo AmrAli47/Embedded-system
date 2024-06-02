@@ -4,7 +4,7 @@
  *
  * Created on March 14, 2024, 8:07 PM
  */
-
+ 
 #ifndef MCAL_GPIO_H
 #define	MCAL_GPIO_H
 
