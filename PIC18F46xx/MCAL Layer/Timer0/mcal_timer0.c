@@ -2,7 +2,7 @@
  * File:   mcal_timer0.c
  * Author: Amr Ali
  *
- * Created on March 24, 2024, 2:59 AM
+ * Created on March 24, 2024, 2:59 AM 
  */
 
 #include "mcal_timer0.h"
