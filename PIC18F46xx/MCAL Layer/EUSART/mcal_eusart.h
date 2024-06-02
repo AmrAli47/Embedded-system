@@ -4,7 +4,7 @@
  *
  * Created on March 25, 2024, 7:40 PM
  */
-
+ 
 #ifndef MCAL_EUSART_H
 #define	MCAL_EUSART_H
 
