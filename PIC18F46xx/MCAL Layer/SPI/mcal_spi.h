@@ -5,7 +5,7 @@
  * Created on March 27, 2024, 11:34 AM
  */
 
-#ifndef MCAL_SPI_H
+#ifndef MCAL_SPI_H 
 #define	MCAL_SPI_H
 
 /*----------------Includes----------------*/
