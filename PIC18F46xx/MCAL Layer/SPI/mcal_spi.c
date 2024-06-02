@@ -7,7 +7,7 @@
 #include "mcal_spi.h"
 static STD_Return_t SPI_Enable(SPI_t *spi);
 static STD_Return_t SPI_Disable(SPI_t *spi);
-static STD_Return_t SPI_Set_Configuration(SPI_t *spi);
+static STD_Return_t SPI_Set_Configuration(SPI_t *spi); 
 static STD_Return_t SPI_Pin_Configuration(SPI_t *spi);
 static STD_Return_t SPI_Select_Clock_status(SPI_t *spi);
 static STD_Return_t SPI_Select_Sampling_Mode(SPI_t *spi);
