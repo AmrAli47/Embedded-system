@@ -4,7 +4,7 @@
  *
  * Created on March 21, 2024, 9:47 PM
  */
-
+ 
 #ifndef MCAL_ADC_H
 #define	MCAL_ADC_H
 
