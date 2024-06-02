@@ -4,7 +4,7 @@
  *
  * Created on March 21, 2024, 11:34 PM
  */
-
+ 
 #ifndef MCAL_INTERNAL_INTERRUPT_H
 #define	MCAL_INTERNAL_INTERRUPT_H
 
