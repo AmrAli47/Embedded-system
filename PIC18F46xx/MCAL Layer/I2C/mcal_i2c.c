@@ -3,7 +3,7 @@
  * Author: Amr Ali
  *
  * Created on March 28, 2024, 12:40 AM
- */
+ */ 
 
 #include "mcal_i2c.h"
 static void(* I2C_Interrupt_Handler)(void)= NULL;
