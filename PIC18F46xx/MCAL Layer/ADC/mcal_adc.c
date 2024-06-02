@@ -7,7 +7,7 @@
 
 #include "mcal_adc.h"
    
-void (*ADC_Handler)(void) = NULL;
+void (*ADC_Handler)(void) = NULL; 
 
 static STD_Return_t ADC_Disable(ADC_t *ADC);
 static STD_Return_t ADC_Enable(ADC_t *ADC);
