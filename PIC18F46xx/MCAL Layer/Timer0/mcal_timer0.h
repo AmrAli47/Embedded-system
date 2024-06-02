@@ -6,7 +6,7 @@
  */
 
 #ifndef MCAL_TIMER0_H
-#define	MCAL_TIMER0_H
+#define	MCAL_TIMER0_H 
 
 /*----------------Includes----------------*/
 #include "../GPIO/mcal_gpio.h"
