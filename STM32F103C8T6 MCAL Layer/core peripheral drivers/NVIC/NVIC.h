@@ -1,3 +1,8 @@
+/* 
+ * File:   NVIC.h
+ * Author: Amr Ali
+ * @brief Nested vector interrupt controller driver 
+ */
 #ifndef _NVIC_H_
 #define _NVIC_H_
 

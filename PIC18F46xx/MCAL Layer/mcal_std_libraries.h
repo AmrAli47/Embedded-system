@@ -1,6 +1,6 @@
 /* 
  * File:   mcal_std_libraries.h
- * Author: Kimo Store
+ * Author: Amr Ali
  *
  * Created on March 22, 2024, 12:34 AM
  */
