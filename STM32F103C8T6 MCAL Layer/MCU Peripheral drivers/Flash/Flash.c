@@ -1,7 +1,7 @@
 /* 
  * File:   Flash.c
  * Author: Amr Ali
- * @brief Flash driver
+ * @brief Flash driver  
  */
 
 #include <Flash.h>
@@ -141,11 +141,105 @@ Flash_lock();
 return ret_val;
 }
 
+/*
+ * @brief Read Pages Protection status
+ * @return function status
+ *@ E_OK  function was completed successfully
+ *@ E_NOK function was completed unsuccessfully
+ * */
+uint32_t Read_Flash_WR_Reg(void)
+{
+return ((uint32_t)(READ_REG(FLASH->FLASH_WRPR)));
+}
 
+/*
+ * @brief Enable Write Protection for pages
+ * @param number of pages -> Note : memory consists of 128 pages and there are 32 bits to control write protection for 128 bits
+ * so each bit enable write protection for 4 pages, for example if you want to enable protection for first four pages
+ * you need to set first two bits so pages value should be 0x3
+ * 1 -> write protection not active, 0 -> write protection active
+ * @return function status
+ *@ E_OK  function was completed successfully
+ *@ E_NOK function was completed unsuccessfully
+ * */
 
+uint8_t Flash_WR_PR_Enable(uint32_t pages)
+{
+uint8_t ret_val = E_OK;
+uint16_t WRP0_Data = 0xFFFF;
+uint16_t WRP1_Data = 0xFFFF;
+uint16_t WRP2_Data = 0xFFFF;
+uint16_t WRP3_Data = 0xFFFF;
 
+pages = ((uint32_t)(~((~(0xFFFFFFFF)) | pages)));
 
+WRP0_Data = ((uint16_t)((pages & OB_WRP_PAG0_TO_PAG31_MSK)));
+WRP1_Data = ((uint16_t)((pages & OB_WRP_PAG32_TO_PAG63_MSK) >> 8));
+WRP2_Data = ((uint16_t)((pages & OB_WRP_PAG64_TO_PAG95_MSK) >> 16));
+WRP3_Data = ((uint16_t)((pages & OB_WRP_PAG96_TO_PAG127_MSK) >> 24));
 
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+Flash_unlock();
+Flash_OB_unlock();
+SET_BIT(FLASH->FLASH_CR, OB_PROGRAMMING_BIT_POS);
 
+OB->WRP0 &= WRP0_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+OB->WRP1 &= WRP1_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+OB->WRP2 &= WRP2_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+OB->WRP3 &= WRP3_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
 
+CLEAR_BIT(FLASH->FLASH_CR, OB_PROGRAMMING_BIT_POS);
+Flash_OB_lock();
+Flash_lock();
+return ret_val;
+}
+
+/*
+ * @brief Disable Write Protection for pages
+ * @param number of pages -> Note : memory consists of 128 pages and there are 32 bits to control write protection for 128 bits
+ * so each bit disable write protection for 4 pages, for example if you want to enable protection for first four pages
+ * you need to set first two bits so pages value should be 0x0
+ * 1 -> write protection not active, 0 -> write protection active
+ * @return function status
+ *@ E_OK  function was completed successfully
+ *@ E_NOK function was completed unsuccessfully
+ * */
+uint8_t Flash_WR_PR_Disble(uint32_t pages)
+{
+uint8_t ret_val = E_OK;
+uint16_t WRP0_Data = 0xFFFF;
+uint16_t WRP1_Data = 0xFFFF;
+uint16_t WRP2_Data = 0xFFFF;
+uint16_t WRP3_Data = 0xFFFF;
+
+pages = ((uint32_t)(Read_Flash_WR_Reg() | pages));
+
+WRP0_Data = ((uint16_t)((pages & OB_WRP_PAG0_TO_PAG31_MSK)));
+WRP1_Data = ((uint16_t)((pages & OB_WRP_PAG32_TO_PAG63_MSK) >> 8));
+WRP2_Data = ((uint16_t)((pages & OB_WRP_PAG64_TO_PAG95_MSK) >> 16));
+WRP3_Data = ((uint16_t)((pages & OB_WRP_PAG96_TO_PAG127_MSK) >> 24));
+
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+Flash_unlock();
+Flash_OB_unlock();
+SET_BIT(FLASH->FLASH_CR, OB_PROGRAMMING_BIT_POS);
+
+OB->WRP0 |= WRP0_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+OB->WRP1 |= WRP1_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+OB->WRP2 |= WRP2_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+OB->WRP3 |= WRP3_Data;
+while(READ_BIT(FLASH->FLASH_SR,FLASH_BUSY_FLAG_BIT_POS));
+
+CLEAR_BIT(FLASH->FLASH_CR, OB_PROGRAMMING_BIT_POS);
+Flash_OB_lock();
+Flash_lock();
+return ret_val;
+}
 

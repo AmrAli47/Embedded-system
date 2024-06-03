@@ -1,8 +1,9 @@
 /* 
  * File:   Flash.h
  * Author: Amr Ali
- * @brief Flash driver
+ * @brief Flash driver  
  */
+
 #ifndef _FLASH_H_
 #define _FLASH_H_
 
@@ -29,7 +30,10 @@
 #define OB_BASE_ADDRESS                  0x1FFFF800
 #define OB								 ((OB_T *)OB_BASE_ADDRESS)
 #define FLASH_OB_ERASE_BIT_EN_POS        5
-
+#define OB_WRP_PAG0_TO_PAG31_MSK         0x000000FF
+#define OB_WRP_PAG32_TO_PAG63_MSK        0x0000FF00
+#define OB_WRP_PAG64_TO_PAG95_MSK        0x00FF0000
+#define OB_WRP_PAG96_TO_PAG127_MSK       0xFF000000
 
 /*************Data Types Declarations****************/
 typedef enum
@@ -73,4 +77,7 @@ uint8_t Flash_OB_unlock(void);
 uint8_t Flash_OB_Launch(void);
 uint8_t Flash_OB_RD_PR_Level_config(uint8_t level);
 uint8_t Flash_Erase_OB(void);
+uint32_t Read_Flash_WR_Reg(void);
+uint8_t Flash_WR_PR_Enable(uint32_t pages);
+uint8_t Flash_WR_PR_Disble(uint32_t pages);
 #endif
