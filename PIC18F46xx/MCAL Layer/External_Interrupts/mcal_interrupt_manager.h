@@ -5,7 +5,7 @@
  * Created on March 18, 2024, 8:04 PM
  */
 
-#ifndef MCAL_INTERRUPT_MANAGER_H
+#ifndef MCAL_INTERRUPT_MANAGER_H 
 #define	MCAL_INTERRUPT_MANAGER_H
 #include "mcal_external_interrupt_config.h"
 #include "../Interal_Interrupts/mcal_internal_interrupt.h"

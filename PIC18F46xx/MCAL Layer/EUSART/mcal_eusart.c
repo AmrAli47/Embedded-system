@@ -5,7 +5,7 @@
  * Created on March 25, 2024, 7:40 PM
  */
 
-
+ 
 #include "mcal_eusart.h"
 static void (* Transmit_Handler)(void);
 static void (* Reception_Handler)(void);

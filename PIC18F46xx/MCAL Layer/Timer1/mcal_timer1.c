@@ -7,7 +7,7 @@
 
 #include "mcal_timer1.h"
 static volatile uint16 l_preload_value = 0;
-static void (* Timer1_Interrupt_Handler)(void) = NULL;
+static void (* Timer1_Interrupt_Handler)(void) = NULL; 
 static STD_Return_t Timer1_Disable(Timer1_t *Timer);
 static STD_Return_t Timer1_Enable(Timer1_t *Timer);
 

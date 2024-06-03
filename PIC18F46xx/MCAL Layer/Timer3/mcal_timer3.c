@@ -3,8 +3,8 @@
  * Author: Amr Ali
  *
  * Created on March 24, 2024, 10:51 PM
- */
-
+ */ 
+ 
 #include "mcal_timer3.h"
 static volatile uint16 l_preload_value = 0;
 static void (* Timer3_Interrupt_Handler)(void) = NULL;

@@ -4,7 +4,7 @@
  * @brief Reset and clock control driver  
  */
 
-
+ 
 #ifndef _RCC_H_
 #define _RCC_H_
 

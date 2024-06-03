@@ -4,7 +4,7 @@
  *
  * Created on March 14, 2024, 8:07 PM
  */
-#include "mcal_gpio.h"
+#include "mcal_gpio.h" 
 /* Reference to data direction control register */
 volatile uint8 *TRIS_REG[5] = {&TRISA,&TRISB,&TRISC,&TRISD,&TRISE};
 /* Reference to data latch control register */

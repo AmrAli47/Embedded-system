@@ -5,7 +5,7 @@
  * Created on March 24, 2024, 5:56 AM
  */
 
-#ifndef MCAL_TIMER1_H
+#ifndef MCAL_TIMER1_H 
 #define	MCAL_TIMER1_H
 
 /*----------------Includes----------------*/

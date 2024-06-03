@@ -5,7 +5,7 @@
  * Created on March 28, 2024, 12:40 AM
  */
 
-#ifndef MCAL_I2C_H
+#ifndef MCAL_I2C_H 
 #define	MCAL_I2C_H
 
 /*----------------Includes----------------*/

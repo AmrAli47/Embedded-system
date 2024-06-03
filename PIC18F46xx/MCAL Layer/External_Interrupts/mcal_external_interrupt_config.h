@@ -6,7 +6,7 @@
  */
 
 #ifndef MCAL_EXTERNAL_INTERRUPT_CONFIG_H
-#define	MCAL_EXTERNAL_INTERRUPT_CONFIG_H
+#define	MCAL_EXTERNAL_INTERRUPT_CONFIG_H 
 
 /*----------------Includes----------------*/
 #include "../../device_config.h"
