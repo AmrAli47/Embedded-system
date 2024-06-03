@@ -61,6 +61,5 @@ void (*ptr_function)(void);
 /*************function prototypes****************/
 uint8_t configure_systick_timer(systick_t* system_timer);
 uint8_t Get_Remaining_Ticks(uint32_t* Remaining_Ticks);
-uint8_t Get_Remaining_Ticks(uint32_t* Remaining_Ticks);
 uint8_t Get_Elapsed_Ticks(uint32_t* Elsapsed_Ticks);
 #endif
