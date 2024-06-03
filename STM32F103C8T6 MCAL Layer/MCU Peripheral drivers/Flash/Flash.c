@@ -171,7 +171,7 @@ uint16_t WRP1_Data = 0xFFFF;
 uint16_t WRP2_Data = 0xFFFF;
 uint16_t WRP3_Data = 0xFFFF;
 
-pages = ((uint32_t)(~((~(0xFFFFFFFF)) | pages)));
+pages = ((uint32_t)(~((~(Read_Flash_WR_Reg())) | pages)));
 
 WRP0_Data = ((uint16_t)((pages & OB_WRP_PAG0_TO_PAG31_MSK)));
 WRP1_Data = ((uint16_t)((pages & OB_WRP_PAG32_TO_PAG63_MSK) >> 8));
