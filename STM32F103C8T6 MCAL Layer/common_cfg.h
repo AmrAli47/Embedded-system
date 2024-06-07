@@ -10,7 +10,7 @@
 #define SET_BIT(REG,BIT_POS)    (REG |= (0X01) << BIT_POS)
 #define CLEAR_BIT(REG,BIT_POS)  (REG &= ~(0X01) << BIT_POS)
 #define READ_BIT(REG,BIT_POS)	((REG >> BIT_POS) & ((uint32_t)0x01))
-
+#define READ_REG(REG)			(REG)
 
 
 
