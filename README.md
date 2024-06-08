@@ -1,4 +1,4 @@
 #### Embedded systrm 
-#### Amr Ali 
-#### Elsayedamralielsayed47@gmail.com
+#### Amr Ali Elsayed
+#### amralielsayed47@gmail.com
    
