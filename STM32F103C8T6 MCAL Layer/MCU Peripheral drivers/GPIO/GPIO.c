@@ -1,3 +1,9 @@
+/* 
+ * File:   GPIO.c
+ * Author: Amr Ali
+ * @brief General Purpose input output driver  
+ */
+
 #include "GPIO.h"
 
 /**
