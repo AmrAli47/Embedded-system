@@ -17,7 +17,9 @@
 #define SYSTICK_TIMER_EXCEPTION_BIT_POS    1
 #define SYSTICK_TIMER_CLOCK_BIT_POS        2
 #define SYSTICK_TIMER_FLAG_BIT_POS         16
-
+#define PROCESSSOR_CLOCK_VAL               72000000
+#define EXTERNAL_CLOCK_VAL                 9000000
+#define RELOAD_REG_MAX_VALUE               16777215
 
 
 
@@ -62,4 +64,6 @@ void (*ptr_function)(void);
 uint8_t configure_systick_timer(systick_t* system_timer);
 uint8_t Get_Remaining_Ticks(uint32_t* Remaining_Ticks);
 uint8_t Get_Elapsed_Ticks(uint32_t* Elsapsed_Ticks);
+uint8_t delay_msec(systick_t* system_timer,uint32_t m_seconds);
+uint8_t start_systick_timer(void);
 #endif
