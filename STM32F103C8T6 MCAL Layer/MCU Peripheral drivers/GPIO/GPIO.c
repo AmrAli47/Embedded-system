@@ -1,9 +1,3 @@
-/* 
- * File:   GPIO.c
- * Author: Amr Ali
- * @brief General Purpose input output driver  
- */
-
 #include "GPIO.h"
 
 /**
@@ -369,12 +363,12 @@ switch(Port)
 case Port_A:
 if(Pin_Set == state)
 {
-CLEAR_BIT(GPIO_PORTA->GPIOx_BSRR,Pin);
-SET_BIT(GPIO_PORTA->GPIOx_BSRR,(Pin +16));
+CLEAR_BIT(GPIO_PORTA->GPIOx_BSRR,(Pin+16));
+SET_BIT(GPIO_PORTA->GPIOx_BSRR,Pin);
 }
 else if(Pin_Reset == state)
 {
-SET_BIT(GPIO_PORTA->GPIOx_BSRR,Pin);
+SET_BIT(GPIO_PORTA->GPIOx_BSRR,(Pin+16));
 }
 else
 {
@@ -384,12 +378,12 @@ break ;
 case Port_B:
 if(Pin_Set == state)
 {
-CLEAR_BIT(GPIO_PORTB->GPIOx_BSRR,Pin);
-SET_BIT(GPIO_PORTB->GPIOx_BSRR,(Pin +16));
+CLEAR_BIT(GPIO_PORTB->GPIOx_BSRR,(Pin+16));
+SET_BIT(GPIO_PORTB->GPIOx_BSRR,Pin);
 }
 else if(Pin_Reset == state)
 {
-SET_BIT(GPIO_PORTB->GPIOx_BSRR,Pin);
+SET_BIT(GPIO_PORTB->GPIOx_BSRR,(Pin+16));
 }
 else
 {
@@ -399,12 +393,12 @@ break ;
 case Port_C:
 if(Pin_Set == state)
 {
-CLEAR_BIT(GPIO_PORTC->GPIOx_BSRR,Pin);
-SET_BIT(GPIO_PORTC->GPIOx_BSRR,(Pin +16));
+CLEAR_BIT(GPIO_PORTC->GPIOx_BSRR,(Pin+16));
+SET_BIT(GPIO_PORTC->GPIOx_BSRR,Pin);
 }
 else if(Pin_Reset == state)
 {
-SET_BIT(GPIO_PORTC->GPIOx_BSRR,Pin);
+SET_BIT(GPIO_PORTC->GPIOx_BSRR,(Pin+16));
 }
 else
 {
@@ -414,12 +408,12 @@ break ;
 case Port_D:
 if(Pin_Set == state)
 {
-CLEAR_BIT(GPIO_PORTD->GPIOx_BSRR,Pin);
-SET_BIT(GPIO_PORTD->GPIOx_BSRR,(Pin +16));
+CLEAR_BIT(GPIO_PORTD->GPIOx_BSRR,(Pin+16));
+SET_BIT(GPIO_PORTD->GPIOx_BSRR,Pin);
 }
 else if(Pin_Reset == state)
 {
-SET_BIT(GPIO_PORTD->GPIOx_BSRR,Pin);
+SET_BIT(GPIO_PORTD->GPIOx_BSRR,(Pin+16));
 }
 else
 {
@@ -429,12 +423,12 @@ break ;
 case Port_E:
 if(Pin_Set == state)
 {
-CLEAR_BIT(GPIO_PORTE->GPIOx_BSRR,Pin);
-SET_BIT(GPIO_PORTE->GPIOx_BSRR,(Pin +16));
+CLEAR_BIT(GPIO_PORTE->GPIOx_BSRR,(Pin+16));
+SET_BIT(GPIO_PORTE->GPIOx_BSRR,Pin);
 }
 else if(Pin_Reset == state)
 {
-SET_BIT(GPIO_PORTE->GPIOx_BSRR,Pin);
+SET_BIT(GPIO_PORTE->GPIOx_BSRR,(Pin+16));
 }
 else
 {
@@ -444,12 +438,12 @@ break ;
 case Port_F:
 if(Pin_Set == state)
 {
-CLEAR_BIT(GPIO_PORTF->GPIOx_BSRR,Pin);
-SET_BIT(GPIO_PORTF->GPIOx_BSRR,(Pin +16));
+CLEAR_BIT(GPIO_PORTF->GPIOx_BSRR,(Pin+16));
+SET_BIT(GPIO_PORTF->GPIOx_BSRR,Pin);
 }
 else if(Pin_Reset == state)
 {
-SET_BIT(GPIO_PORTF->GPIOx_BSRR,Pin);
+SET_BIT(GPIO_PORTF->GPIOx_BSRR,(Pin+16));
 }
 else
 {
@@ -459,12 +453,12 @@ break;
 case Port_G:
 if(Pin_Set == state)
 {
-CLEAR_BIT(GPIO_PORTG->GPIOx_BSRR,Pin);
-SET_BIT(GPIO_PORTG->GPIOx_BSRR,(Pin +16));
+CLEAR_BIT(GPIO_PORTG->GPIOx_BSRR,(Pin+16));
+SET_BIT(GPIO_PORTG->GPIOx_BSRR,Pin);
 }
 else if(Pin_Reset == state)
 {
-SET_BIT(GPIO_PORTG->GPIOx_BSRR,Pin);
+SET_BIT(GPIO_PORTG->GPIOx_BSRR,(Pin+16));
 }
 else
 {
