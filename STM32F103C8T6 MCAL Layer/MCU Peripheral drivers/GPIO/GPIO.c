@@ -12,7 +12,7 @@ uint8_t Enable_Port_Clock(Port_t Port)
 {
 uint8_t ret_val = E_OK;
 switch(Port)
-{
+{  
 case Port_A: SET_BIT(GPIO_CLOCK_ADD,GPIO_CLOCK_BIT_POS); break ;
 case Port_B: SET_BIT(GPIO_CLOCK_ADD,(GPIO_CLOCK_BIT_POS + 1)); break ;
 case Port_C: SET_BIT(GPIO_CLOCK_ADD,(GPIO_CLOCK_BIT_POS + 2)); break ;
