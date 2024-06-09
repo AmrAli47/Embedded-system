@@ -58,6 +58,4 @@ void EXTI3_IRQHandler(void)
 {
 	Clear_Pending_Bit(Ext_Int_EV_3);
 	Toggle_Pin(Port_C,Pin13);
-	/* delay for debouncing */
-	for(int i=0;i<1000;i++);
 }
