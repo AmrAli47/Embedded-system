@@ -10,7 +10,7 @@ RCC_OSC_Init_t oscillator = {
 .PLL.HSE_Pri_dev_fc = Pre_Div_1,
 .PLL.PLL_mul_factor = PLL_MUL_9,
 };
-
+ 
 RCC_CLK_Init_t clock = {
 .clock_type = PLL_Selected_as_system_clock,
 .AHB_Prescaler = AHB_Prescaler_DIV_BY_1,
