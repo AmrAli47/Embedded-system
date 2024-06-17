@@ -3,8 +3,7 @@
 #include "main.h"
 
 void sys_handler_callback(void);
-int i = 0;
-uint32_t ticks;
+
 RCC_OSC_Init_t oscillator = {
 .oscillator_type = High_Speed_External_Oscillator,
 .Ext_OSC = High_Speed_External_Oscillator_Not_bypassed,
