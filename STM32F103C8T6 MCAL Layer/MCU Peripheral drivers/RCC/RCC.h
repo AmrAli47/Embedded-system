@@ -23,6 +23,7 @@
 #define PLL_BIT_POS                 24U
 #define PLL_MUL_BITS_POS            18U
 #define PLL_SOURCE_BITS_POS         16U
+#define PLL_SOURCE_BITS_MSK         1U
 #define PLL_PRI_DIV_POS             17U
 #define PLL_MUL_BITS_MASK		    (uint32_t)0x0F
 #define PLL_SOURCE_BITS_MASK        (uint32_t)0x01
@@ -36,8 +37,14 @@
 #define FLASH_LATENCY_BIT_POS       0
 #define FLASH_LATENCY_BIT_MSK       2
 #define EXTERNAL_OSC_BYPASS_BIT     18U
+#define AHB_PRESCLAER_BIT_POS       4
+#define AHB_PRESCLAER_MSK           0xF
+#define APB_PRESCLAER_MSK           0x7
+#define HSI_VALUE                   8000000
+
 
 /*************Data Types Declarations****************/
+
 typedef struct
 {
 volatile uint32_t RCC_CR;
@@ -145,6 +152,7 @@ typedef struct
 OSC_Type_t oscillator_type;             // @ref OSC_Type_t
 Ext_oscillator_t Ext_OSC;			   // @ref Ext_oscillator_t used only in case oscillator type was external oscillator
 PLL_Type_t           PLL;             // @ref PLL_Type_t
+uint32_t 		Ext_OSC_VAL;          // this value range from 4 MHZ -> 16 MHZ
 }RCC_OSC_Init_t;
 
 typedef struct
@@ -158,4 +166,9 @@ APB_Prescaler_Type_t APB2_Prescaler;  // @ref APB_Prescaler_Type_t
 /*************function prototypes****************/
 uint8_t RCC_osc_Config(RCC_OSC_Init_t* osc);
 uint8_t RCC_clk_Config(RCC_CLK_Init_t* clk);
+uint8_t get_SYSCLK_clock(RCC_OSC_Init_t* osc,uint32_t* SYSCLK_val);
+uint8_t get_HCLK_clock(RCC_OSC_Init_t* osc,uint32_t* HCLK_val);
+uint8_t get_PCLK1_clock(RCC_OSC_Init_t* osc,uint32_t* PCLK1_val);
+uint8_t get_PCLK2_clock(RCC_OSC_Init_t* osc,uint32_t* PCLK2_val);
 #endif
+
