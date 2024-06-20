@@ -28,6 +28,7 @@
 #define PVD_LEVEL_SELECTION_MSK             0x7
 #define WFI()                               asm volatile("WFI") /* wait for interrupt */
 #define WFE()                               asm volatile("WFE") /* wait for event*/
+#define ENABLE_CONFIG_BIT_POS               4
 
 /*************Data Types Declarations****************/
 typedef enum
@@ -72,6 +73,12 @@ PVD_Rising_Edge,
 PVD_Falling_Edge
 }PVD_Edge_t;
 
+typedef enum
+{
+Events_and_Enabled_Interrupts_only_wakeup_the_processor,
+Events_and_All_Interrupts_wakeup_the_processor
+}wakeup_t;
+
 typedef struct
 {
 void (*PVD_Callback)(void);
@@ -92,6 +99,7 @@ volatile uint32_t PWR_CSR;
 uint8_t Enter_sleep_mode(sleep_entery_mode_t sleep_mode_entry,sleep_exit_mode_t sleep_exit_mode);
 uint8_t Enter_stop_mode(sleep_exit_mode_t sleep_exit_mode,voltage_regulator_mode_t voltage_regulator_mode);
 uint8_t Enter_standby_mode(void);
+uint8_t Processor_Wakeup_config(wakeup_t WKU);
 uint8_t Enable_wakeup_pin(void);
 uint8_t Disable_wakeup_pin(void);
 uint8_t PVD_Init(PVD_config_t* PVD);

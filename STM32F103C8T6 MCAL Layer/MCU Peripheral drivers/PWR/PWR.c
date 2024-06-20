@@ -51,6 +51,25 @@ ret_val = E_NOK;
 return ret_val ;
 }
 
+uint8_t Processor_Wakeup_config(wakeup_t WKU)
+{
+uint8_t ret_val = E_OK;
+if(Events_and_Enabled_Interrupts_only_wakeup_the_processor == WKU)
+{
+/* only enabled interrupts or events can wakeup the processor, disabled interrupts are excluded */
+CLEAR_BIT(SCB->SCR,ENABLE_CONFIG_BIT_POS);
+}
+else if(Events_and_All_Interrupts_wakeup_the_processor == WKU)
+{
+/* enabled events and all interrupts, including disabled interrupts, can wakeup the processor. */
+SET_BIT(SCB->SCR,ENABLE_CONFIG_BIT_POS);
+}
+else
+{
+ret_val = E_NOK;
+}
+return ret_val;
+}
 
 /**
  * @ brief Enter stop mode
