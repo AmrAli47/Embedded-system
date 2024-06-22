@@ -81,16 +81,17 @@ return ret_val;
  * @ E_OK  function was completed successfully
  * @ E_NOK function was completed unsuccessfully
  * */
-uint8_t delay_msec(systick_t* system_timer,uint32_t m_seconds)
+uint8_t delay_msec(systick_t* system_timer,float m_seconds)
 {
 uint8_t ret_val = E_OK;
 SYSTICK->SYST_RVR = 0;
 SYSTICK->SYST_CVR = 0;
-uint32_t temp_val = 0;
+float temp_val = 0;
 switch(system_timer->timer_clock)
 {
 case processor_clock:
 temp_val = ((m_seconds / 1000) * (PROCESSSOR_CLOCK_VAL - 1));
+temp_val = ceil(temp_val);
 if(temp_val > RELOAD_REG_MAX_VALUE)
 {
 SYSTICK->SYST_RVR = RELOAD_REG_MAX_VALUE;
@@ -104,6 +105,7 @@ while(!(READ_BIT(SYSTICK->SYST_CSR,SYSTICK_TIMER_FLAG_BIT_POS)));
 break;
 case external_clock:
 temp_val = ((m_seconds / 1000) * (EXTERNAL_CLOCK_VAL - 1));
+temp_val = ceil(temp_val);
 if(temp_val > RELOAD_REG_MAX_VALUE)
 {
 SYSTICK->SYST_RVR = RELOAD_REG_MAX_VALUE;
