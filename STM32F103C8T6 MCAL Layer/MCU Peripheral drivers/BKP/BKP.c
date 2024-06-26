@@ -23,6 +23,19 @@ return ret_val;
 }
 
 /**
+ * @ brief Disable Write Access to Backup Registers
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
+uint8_t Disable_write_access_to_BKP(void)
+{
+uint8_t ret_val = E_OK;
+CLEAR_BIT(PWR->PWR_CR,BKP_WR_ACCESS_EN_BIT_POS);
+return ret_val;
+}
+
+/**
  * @ brief Initialize TAMPER
  * @ param pointer to TAMPER configuration @ref TAMPER_Config_t
  * @ return function status

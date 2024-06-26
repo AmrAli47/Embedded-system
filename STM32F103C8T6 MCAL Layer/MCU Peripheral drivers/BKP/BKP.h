@@ -69,6 +69,7 @@ volatile uint32_t BKP_CSR;
 
 /*************function prototypes****************/
 uint8_t Enable_write_access_to_BKP(void);
+uint8_t Disable_write_access_to_BKP(void);
 uint8_t Tamper_Init(TAMPER_Config_t* Tamper);
 uint8_t Tamper_DeInit(void);
 uint8_t store_2_bytes(uint8_t register_number,uint16_t data);
