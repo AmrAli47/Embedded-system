@@ -1,6 +1,7 @@
 
 https://github.com/AmrAli47/Embedded-system/assets/167882152/39e8ad43-2587-4002-8d31-09d9486a2a82
 
+i have set current date and time, then read them from RTC register, and sent them over UART.
 
 You can find RTC driver at[RTC](https://github.com/AmrAli47/Embedded-system/tree/origin/STM32F103C8T6%20MCAL%20Layer/MCU%20Peripheral%20drivers/RTC)
 
