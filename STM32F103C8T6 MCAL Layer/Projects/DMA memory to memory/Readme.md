@@ -1,0 +1,1 @@
+Using DMA to Transfer data from one location in RAM(source) to another location in RAM(destination), This process is done using DMA without interference from the CPU
