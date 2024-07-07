@@ -42,6 +42,13 @@ static uint8_t set_peripheral_size(DMA_t* DMA);
 static uint8_t set_memory_increment_mode(DMA_t* DMA);
 static uint8_t set_peripheral_increment_mode(DMA_t* DMA);
 
+/*
+ * @ brief initialize DMA
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 uint8_t DMA_Init(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -88,7 +95,13 @@ set_peripheral_size(DMA);
 return ret_val;
 }
 
-
+/*
+ * @ brief de-initialize DMA
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 uint8_t DMA_DeInit(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -97,6 +110,13 @@ DeInit_Interrupt_configuration(DMA);
 return ret_val;
 }
 
+/*
+ * @ brief start DMA
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 uint8_t start_DMA(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -114,7 +134,13 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
-
+/*
+ * @ brief Disable DMA specific channel
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t Disable_channel(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -134,7 +160,13 @@ return ret_val;
 
 
 
-
+/*
+ * @ brief set DMA channel priority
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_channel_priority(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -175,7 +207,13 @@ return ret_val;
 }
 
 
-
+/*
+ * @ brief set DMA channel direction
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_channel_direction(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -285,7 +323,13 @@ return ret_val;
 }
 
 
-
+/*
+ * @ brief Enable DMA1 Clock
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t Enable_DMA1_Clock(void)
 {
 uint8_t ret_val = E_OK;
@@ -293,7 +337,13 @@ SET_BIT(RCC->RCC_AHBENR,DMA_CLOCK_BIT_POS);
 return ret_val;
 }
 
-
+/*
+ * @ brief configure DMA Interrupts
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_Interrupt_configuration(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -486,7 +536,14 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
-
+/*
+ * @ brief set number of data which will be transfered
+ * @ param DMA Configurations @ ref DMA_t
+ * @ param length of data
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 uint8_t set_number_of_data_to_transfer(DMA_t* DMA,uint16_t len)
 {
 uint8_t ret_val = E_OK;
@@ -504,7 +561,14 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
-
+/*
+ * @ brief set destination address
+ * @ param DMA Configurations @ ref DMA_t
+ * @ param address
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 uint8_t Set_destination_aaddress(DMA_t* DMA,uint32_t address)
 {
 uint8_t ret_val = E_OK;
@@ -522,7 +586,14 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
-
+/*
+ * @ brief set source address
+ * @ param DMA Configurations @ ref DMA_t
+ * @ param address
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 uint8_t Set_source_aaddress(DMA_t* DMA,uint32_t address)
 {
 uint8_t ret_val = E_OK;
@@ -541,7 +612,13 @@ return ret_val;
 }
 
 
-
+/*
+ * @ brief set Interrupt Handlers
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_Interrupt_Handler(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -734,6 +811,13 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
+/*
+ * @ brief de-initialize DMA Interrupt Configuration
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t DeInit_Interrupt_configuration(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -779,6 +863,7 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
+/* DMA1 channel1 IRQ*/
 void DMA1_Channel1_IRQHandler(void)
 {
 if((NULL != Error_Transfer_Handler_CH1) && (1 == READ_BIT(DMA1->DMA_ISR,ERROR_TRANSFER_FLAG_BIT_POS)))
@@ -824,7 +909,7 @@ else
 SET_BIT(DMA1->DMA_IFCR,(GLOBAL_INT_CLEAR_BIT_POS));
 }
 
-
+/* DMA1 channel2 IRQ*/
 void DMA1_Channel2_IRQHandler(void)
 {
 if((NULL != Error_Transfer_Handler_CH2) && (1 == READ_BIT(DMA1->DMA_ISR,(ERROR_TRANSFER_FLAG_BIT_POS + 4))))
@@ -870,6 +955,7 @@ else
 SET_BIT(DMA1->DMA_IFCR,(GLOBAL_INT_CLEAR_BIT_POS + 4));
 }
 
+/* DMA1 channel3 IRQ*/
 void DMA1_Channel3_IRQHandler(void)
 {
 if((NULL != Error_Transfer_Handler_CH3) && (1 == READ_BIT(DMA1->DMA_ISR,(ERROR_TRANSFER_FLAG_BIT_POS + 8))))
@@ -915,6 +1001,7 @@ else
 SET_BIT(DMA1->DMA_IFCR,(GLOBAL_INT_CLEAR_BIT_POS + 8));
 }
 
+/* DMA1 channel4 IRQ*/
 void DMA1_Channel4_IRQHandler(void)
 {
 if((NULL != Error_Transfer_Handler_CH4) && (1 == READ_BIT(DMA1->DMA_ISR,(ERROR_TRANSFER_FLAG_BIT_POS + 12))))
@@ -960,6 +1047,7 @@ else
 SET_BIT(DMA1->DMA_IFCR,(GLOBAL_INT_CLEAR_BIT_POS + 12));
 }
 
+/* DMA1 channel5 IRQ*/
 void DMA1_Channel5_IRQHandler(void)
 {
 if((NULL != Error_Transfer_Handler_CH5) && (1 == READ_BIT(DMA1->DMA_ISR,(ERROR_TRANSFER_FLAG_BIT_POS + 16))))
@@ -1005,6 +1093,7 @@ else
 SET_BIT(DMA1->DMA_IFCR,(GLOBAL_INT_CLEAR_BIT_POS + 16));
 }
 
+/* DMA1 channel6 IRQ*/
 void DMA1_Channel6_IRQHandler(void)
 {
 if((NULL != Error_Transfer_Handler_CH6) && (1 == READ_BIT(DMA1->DMA_ISR,(ERROR_TRANSFER_FLAG_BIT_POS + 20))))
@@ -1050,7 +1139,7 @@ else
 SET_BIT(DMA1->DMA_IFCR,(GLOBAL_INT_CLEAR_BIT_POS + 20));
 }
 
-
+/* DMA1 channel7 IRQ*/
 void DMA1_Channel7_IRQHandler(void)
 {
 if((NULL != Error_Transfer_Handler_CH7) && (1 == READ_BIT(DMA1->DMA_ISR,(ERROR_TRANSFER_FLAG_BIT_POS + 24))))
@@ -1096,7 +1185,13 @@ else
 SET_BIT(DMA1->DMA_IFCR,(GLOBAL_INT_CLEAR_BIT_POS + 24));
 }
 
-
+/*
+ * @ brief set Transfer type
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_transfer_type(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -1114,7 +1209,13 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
-
+/*
+ * @ brief Enable circular mode
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t Enable_Circular_Mode(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -1133,7 +1234,13 @@ return ret_val;
 }
 
 
-
+/*
+ * @ brief set memory size
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_memory_size(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -1152,7 +1259,13 @@ return ret_val;
 }
 
 
-
+/*
+ * @ brief set peripheral size
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_peripheral_size(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -1170,7 +1283,13 @@ default : ret_val = E_NOK;
 return ret_val;
 }
 
-
+/*
+ * @ brief set memory increment mode
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_memory_increment_mode(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
@@ -1187,6 +1306,16 @@ default : ret_val = E_NOK;
 }
 return ret_val;
 }
+
+
+
+/*
+ * @ brief set peripheral increment mode
+ * @ param DMA Configurations @ ref DMA_t
+ * @ return function status
+ * @ E_OK  function was completed successfully
+ * @ E_NOK function was completed unsuccessfully
+ * */
 static uint8_t set_peripheral_increment_mode(DMA_t* DMA)
 {
 uint8_t ret_val = E_OK;
