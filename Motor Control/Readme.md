@@ -1,9 +1,9 @@
-https://github.com/AmrAli47/Repo/assets/167882152/ea46a4ac-1066-4209-a3e6-71b99008e5dd
-### Components : PIC18F4620 MCU, LM35 Temperature sensor, LCD 4 * 20, L298N Motor Driver,DC Motor.
-### Project Description :
-### Read Temperature value from Two Analog Temperature Sensors, Then use ADC Periperhal to Convert Analog value to Digital Value.
-### Convert Digital Value to String to be able to Display it on the LCD.
-### Based on Temperature Value we Control two Motors Direction (Left or Right or Stop).
+
+https://github.com/user-attachments/assets/bf868441-a4d2-4f5d-9a46-843f647c05f7
+
+
+
+The Motor Control Project employs a PIC MCU and LM35 temperature sensor to monitor ambient temperature and control motor direction accordingly. The MCU processes the temperature readings, displaying the current value on an LCD. Based on predefined temperature thresholds, the L298N motor driver is activated to adjust the motor’s direction.
 
 
 
