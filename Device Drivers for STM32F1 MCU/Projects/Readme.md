@@ -1,1 +1,1 @@
-Testing MCU Functionalities
+Tested MCU Functionalities
