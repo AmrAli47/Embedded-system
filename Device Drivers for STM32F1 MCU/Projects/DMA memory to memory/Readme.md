@@ -1,6 +1,4 @@
 
-Using DMA to Transfer data fro
-
 https://github.com/AmrAli47/Embedded-system/assets/167882152/1342b105-d612-4baa-8148-bea390fec5d7
 
 using DMA to transfer data from one location in RAM(source) to another location in RAM(destination),
