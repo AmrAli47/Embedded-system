@@ -1,4 +1,4 @@
-<source src="https://github.com/AmrAli47/Embedded-system/assets/167882152/169d119d-4e93-4c5f-ac81-8f0e4b36defa" type="video/mp4">
+https://github.com/AmrAli47/Embedded-system/assets/167882152/169d119d-4e93-4c5f-ac81-8f0e4b36defa
 Transmit and Receive data via USART in DMA mode 
 
 You can find :
