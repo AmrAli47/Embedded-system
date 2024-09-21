@@ -1,2 +1,16 @@
-implementing MCAL layer for STM32F103C8T6 MCU based on ARM Cortex-M3 Processor
-using blue pill development board
+implemented MCAL Layer for STM32F1 MCU using Blue bill development Board, which Includes
+- GPIO
+- DMA
+- RCC
+- USART
+- WWDG
+- IWDG
+- RTC
+- PWR
+- Flash
+- External Interrupts
+- CRC
+- BKP
+- NVIC
+- SCB
+- systick timer
