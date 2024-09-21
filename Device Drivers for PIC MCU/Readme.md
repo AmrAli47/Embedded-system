@@ -1,4 +1,4 @@
-implemented MCAL Layer for PIC MCU which contains
+implemented MCAL Layer for PIC MCU, which Includes
 - ADC
 - CCP
 - EEPROM
