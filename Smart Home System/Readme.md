@@ -1,13 +1,8 @@
-https://github.com/AmrAli47/Repo/assets/167882152/07e4552b-57f6-4a64-a012-f69d849d264b
-### Components: 2 * PIC18F4620 MCU, TC74 Digital Temperature Sensor, DS1307 Real Time Clock Module,
-### L289N Motor Driver, 24C02C EEPROM.
-### Project Description:
-### All devices are connected to I2C Bus, Master Controller reads date and Time 
-### from RTC Module via I2C Bus Then Send date and Time value Through EUSART.
-### Master Controller reads Temperature value from TC47 Temperature sensor and 
-### send this value to Slave Controller via I2C Bus and Slave Controller
-### will control the operation of motor based on the temperature value.
-### Master Controller uses EEPROM memory to Save data.
+https://github.com/user-attachments/assets/c576af0a-f3dc-4ee0-a43c-cb5ca9429c1b
+
+The Smart Home System project features a master-slave architecture utilizing two MCUs connected via I2C bus. The master MCU reads the current date and time from a DS1307 RTC module and transmits this information via UART. Additionally, it retrieves temperature values from a TC47 temperature sensor and sends them to the slave MCU. The slave MCU then controls motors using an L298N driver based on the temperature data received. To enhance functionality, a 24C02C EEPROM is integrated for data storage.
+
+
 
 
 
