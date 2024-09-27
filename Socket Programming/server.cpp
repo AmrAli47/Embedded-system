@@ -1,3 +1,8 @@
+/*
+ * Author: Amr Ali
+ * Date: September 27, 2024
+ */
+
 #include <iostream>
 #include "WinSock2.h"
 #include "ws2tcpip.h"
