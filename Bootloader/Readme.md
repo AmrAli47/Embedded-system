@@ -1,6 +1,26 @@
-This project implements a custom bootloader that manages various functionalities for embedded systems. It provides essential commands for interacting with the device's memory and allows for user application management.
+https://github.com/user-attachments/assets/207b4b03-c02f-477b-9f5a-bc5cc0a5ad7e
 
-## The bootloader supports the following functionalities:
+### Video Demonstration: Jump Command
+In this video, we demonstrate the functionality of the jump command within the bootloader. The bootloader resides in memory at address 0x08000000, 
+while the main application (LED Blinking) is located at address 0x08010000.
+
+Key Steps in the Video:
+
+1. Overview of Applications:
+- The first application is the Bootloader at 0x08000000.
+- The second application is the Main Application (LED Blinking) at 0x08010000.
+2. Triggering the Jump Command:
+
+3. We invoke the jump command from the bootloader.
+- The starting address of the main application (0x08010000) is provided as an argument.
+- Transition to the Main Application:
+
+The bootloader transfers control to the main application, allowing it to start execution.
+
+This project implements a custom bootloader that manages various functionalities for embedded systems. It provides essential commands for interacting with the device's memory 
+and allows for user application management.
+
+### The bootloader supports the following functionalities:
 
 1. Get the Version and Allowed Commands: Retrieve the bootloader version and the list of commands that can be executed.
 2. Get Protocol Version: Obtain the current protocol version used for communication.
