@@ -20,6 +20,7 @@ The bootloader transfers control to the main application, allowing it to start e
 This project implements a custom bootloader that manages various functionalities for embedded systems. It provides essential commands for interacting with the device's memory 
 and allows for user application management.
 
+
 ### The bootloader supports the following functionalities:
 
 1. Get the Version and Allowed Commands: Retrieve the bootloader version and the list of commands that can be executed.
