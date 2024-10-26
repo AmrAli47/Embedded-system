@@ -15,6 +15,7 @@ Key Steps in the Video:
 3. Transition to the Main Application:
 -The bootloader transfers control to the main application, allowing it to start execution.
 
+***
 
 This project implements a custom bootloader that manages various functionalities for embedded systems. It provides essential commands for interacting with the device's memory 
 and allows for user application management.
