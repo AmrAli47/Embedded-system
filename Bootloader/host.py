@@ -1,3 +1,8 @@
+ 
+# File:   host.py
+# Author: Amr Ali
+ 
+
 import serial
 import serial.tools.list_ports
 import time
