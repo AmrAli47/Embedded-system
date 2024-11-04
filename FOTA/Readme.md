@@ -1,4 +1,7 @@
-https://github.com/user-attachments/assets/985a28c3-6f19-46d8-9fe0-02db997a35e4
+<div align="center">
+<video src="https://github.com/user-attachments/assets/985a28c3-6f19-46d8-9fe0-02db997a35e4"></video>  
+</div>
+
 
 ### FOTA Project 
 The FOTA (Firmware Over The Air) project aims to simplify and automate the firmware update process for embedded systems. 
