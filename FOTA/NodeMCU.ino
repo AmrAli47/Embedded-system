@@ -8,8 +8,8 @@ void crc_32(uint32_t* data,uint16_t len,uint32_t* crc_result);
 #define COMMAND 0x22
 uint32_t address =  0x08010000;
 
-const char* ssid = "orange-Amr";          
-const char* password = "5531674amr";       
+const char* ssid = "Your Network Name";          
+const char* password = "Your Network Password";       
 
 ESP8266WebServer server(80);
 const size_t BUFFER_SIZE = 6000; 
