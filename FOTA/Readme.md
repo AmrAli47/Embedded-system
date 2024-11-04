@@ -11,6 +11,6 @@ allowing users to easily initiate firmware updates through an intuitive interfac
 - HTTP Protocol: Firmware files are transferred securely over the HTTP protocol.
 - NodeMCU Server Mode: The NodeMCU is configured to operate in server mode,
 enabling it to wirelessly send firmware updates to connected devices.
-- UART Communication: The NodeMCU communicates with the Blue Pill microcontroller using UART.
+- UART Communication: The NodeMCU communicates with the Blue Pill  using UART.
 - Data Integrity Verification: To ensure the reliability of the updates, a Cyclic Redundancy Check (CRC) is implemented.
   This mechanism verifies the integrity of the transferred data.
