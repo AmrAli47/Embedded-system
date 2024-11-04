@@ -61,8 +61,6 @@ class BL {
     Return_Status BL_Write_Unprotection_Command(void);
     Return_Status BL_Read_Protection_Command(void);
     Return_Status BL_Read_Unprotection_Command(void);
-    Return_Status read_data_from_memory(uint8_t* pBuffer, uint8_t BufferLength,uint32_t address);
-
 };
 
 
