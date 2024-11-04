@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOTA</title>
+</head>
+<body>
+    <div>
+        <input type="file" id="FileInput">
+        <button onclick="upload()">Upload</button>
+        <p id="status"></p>
+    </div>
+    <script>
+        function upload()
+        {
+            let FileInput = document.getElementById("FileInput");
+            let file = FileInput.files[0];
+            if(!file)
+            {
+                document.getElementById("status").innerText = "Please select a file !";
+                return;
+            }
+            let formdata = new FormData();
+            formdata.append("file",file)
+            fetch("/upload", {
+                method : "POST",
+                body : formdata
+            }).then(response =>{
+                if(response.ok)
+                {
+                    document.getElementById("status").innerText = "file uploaded successfully";
+                }
+                else 
+                {
+                    document.getElementById("status").innerText = "file upload failed";
+                }
+            }).catch(error => {
+                document.getElementById("status").innerText = "Error : " + error.message;
+            });
+        }
+    </script>
+</body>
+</html>
