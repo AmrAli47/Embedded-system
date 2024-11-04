@@ -433,7 +433,12 @@ Return_Status BL::BL_Read_Unprotection_Command(void)
     return ret_val;
 }
 
-
+/*
+ * @ Brief Reads data from Flash memroy
+ * @ return function status
+ * @ HAL_OK  The function completed successfully
+ * @ HAL_NOK The function completed unsuccessfully
+ */
 static void read_flash(uint32_t address,uint8_t len,uint8_t* data)
 {
 	for(int i=0;i<len;i++)
@@ -444,7 +449,12 @@ static void read_flash(uint32_t address,uint8_t len,uint8_t* data)
 
 
 
-
+/*
+ * @ Brief calculates 8 Bit CRC
+ * @ return function status
+ * @ HAL_OK  The function completed successfully
+ * @ HAL_NOK The function completed unsuccessfully
+ */
 static void crc_8(uint8_t* data,uint8_t len,uint8_t* crc_result)
 {
 	uint8_t Poly = 0x4C, initial_value = 0xFF;
