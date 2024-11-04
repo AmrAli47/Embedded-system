@@ -433,7 +433,12 @@ Return_Status BL::BL_Read_Unprotection_Command(void)
     return ret_val;
 }
 
-
+/*
+ * @ Brief Reads data from Flash memroy
+ * @ param : starting address in flash from which to read data
+ * @ param : number of bytes to read from flash
+ * @ param : pointer to the buffer where the read data will be stored
+ */
 static void read_flash(uint32_t address,uint8_t len,uint8_t* data)
 {
 	for(int i=0;i<len;i++)
@@ -444,7 +449,12 @@ static void read_flash(uint32_t address,uint8_t len,uint8_t* data)
 
 
 
-
+/*
+ * @ Brief calculates 8 Bit CRC
+ * @ param : pointer to starting address of data buffer on which to calculate the crc
+ * @ param : number of data bytes to include in the CRC calculation.
+ * @ param : pointer to buffer where the calculated crc will be stored
+ */
 static void crc_8(uint8_t* data,uint8_t len,uint8_t* crc_result)
 {
 	uint8_t Poly = 0x4C, initial_value = 0xFF;
