@@ -11,7 +11,7 @@ The FOTA (Firmware Over The Air) project aims to simplify and automate the firmw
 - **NodeMCU Server Mode**: The NodeMCU operates in server mode to wirelessly send firmware updates to connected devices.
 - **UART Communication**: The NodeMCU communicates with the Blue Pill using UART.
 - **Bootloader Functionality**: The project includes a robust bootloader on the Blue Pill microcontroller that  manages firmware updates, verifying data integrity.
-<br>
+
 ### Bootloader Overview
 The bootloader in the Blue Pill microcontroller plays a vital role in the FOTA (Firmware Over The Air) project by managing the firmware update process. Its primary functions include:
 
