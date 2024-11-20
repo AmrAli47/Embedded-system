@@ -34,3 +34,5 @@ and allows for user application management.
 9. Disable Write Protection: Remove write protection from previously protected memory sections.
 10. Enable Read Protection: Secure the memory from being read by unauthorized access.
 11. Disable Read Protection: Lift read protection to allow access to the memory.
+
+The host application, written in Python, sends data from the PC to the MCU via UART, while the MCU bootloader, implemented in C++, executes user-defined commands based on the selected operations.
