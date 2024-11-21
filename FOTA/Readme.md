@@ -2,6 +2,28 @@
 <video width="560" height="315" src="https://github.com/user-attachments/assets/ce49503c-a856-4fdd-b692-5c172e4f9551"></video>  
 </div>
 
+### Video Demonstration: FOTA (Firmware Over-the-Air) Update
+
+In this video, we demonstrate the process of updating firmware wirelessly via a web user interface, utilizing a NodeMCU to send the firmware to a Blue Pill microcontroller.
+
+Key Steps in the Video:
+Overview of Components:
+
+The Web User Interface allows the user to select and send a binary (.bin) file.
+The NodeMCU receives the firmware wirelessly and forwards it to the Blue Pill microcontroller.
+The Blue Pill is responsible for verifying the integrity of the firmware through a CRC check.
+Triggering the FOTA Process:
+
+The binary file is selected and sent through the web interface.
+The NodeMCU receives the file and passes it to the Blue Pill microcontroller.
+Verifying the Firmware:
+
+The Blue Pill performs a CRC check to ensure the firmware was correctly received without errors.
+Applying the Firmware:
+
+If the CRC check is successful, the Blue Pill jumps to the application address and starts executing the new firmware.
+The new firmware application in this demonstration is a simple LED Blinking program.
+
 ### FOTA Project 
 The FOTA (Firmware Over The Air) project aims to simplify and automate the firmware update process for embedded systems. 
 
