@@ -4,6 +4,6 @@ I graduated in 2023 with a degree in Electrical Engineering and have a strong en
 
 ## About Me
 - 🎓 Degree: Electrical Engineering (2023)
-- 💡 Interests: Embedded Systems, Model Based, Motor Control, and BMS
+- 💡 Interests: Embedded Systems, Model Based, Motor Control and BMS
 - You can contact me at: [amralielsayed47@email.com](mailto:your.email@example.com)
 
